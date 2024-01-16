@@ -36,3 +36,45 @@ working_days=20
 monthly_wage=$((hourly_wage * daily_hours * working_days))
 
 echo "Your monthly wage is: $monthly_wage"
+
+#!/bin/bash
+
+echo "Enter hourly wage:"
+read hourly_wage
+
+total_hours=0
+total_days=0
+daily_hours=8
+monthly_hours_limit=100
+monthly_days_limit=20
+
+while [ $total_hours -lt $monthly_hours_limit ] && [ $total_days -lt $monthly_days_limit ]; do
+  echo "Enter hours worked for the day (0 to end):"
+  read hours_worked
+
+  if [ "$hours_worked" -eq 0 ]; then
+    break
+  fi
+
+  total_hours=$((total_hours + hours_worked))
+  total_days=$((total_days + 1))
+done
+
+monthly_wage=$((hourly_wage * total_hours))
+
+echo "Total hours worked: $total_hours"
+echo "Total days worked: $total_days"
+echo "Your monthly wage is: $monthly_wage"
+
+
+
+
+daily_hours=8
+monthly_hours_limit=100
+monthly_days_limit=20
+
+while [ $total_hours -lt $monthly_hours_limit ] && [ $total_days -lt $monthly_days_limit ]; do
+  echo "Enter hours worked for the day (0 to end):"
+  read hours_worked
+
+
