@@ -22,3 +22,17 @@ daily_wage=$((part_time*wage_per_hour))
 echo $daily_wage
 
 
+
+#!/bin/bash
+
+echo "Enter hourly wage:"
+read hourly_wage
+
+# Assuming 8 hours of work per day
+daily_hours=8
+working_days=20
+
+# Calculate monthly wage
+monthly_wage=$((hourly_wage * daily_hours * working_days))
+
+echo "Your monthly wage is: $monthly_wage"
